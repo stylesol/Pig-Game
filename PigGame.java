@@ -8,13 +8,14 @@ public class PigGame
 {
     private final int MAX = 6; //number of sides of dice
     public int roll; 
-        
-    // this is what runs the constructor
-    public dice(){
-        this.roll();
-        }
+           
+    // roll the dice
     public void roll() {
         roll = (int)(Math.random() * MAX + 1);
         // the +1 means that it cant roll a zero
     }
+     public int getRoll() {
+        return roll;
+    }
+        
 }
