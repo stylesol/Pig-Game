@@ -40,44 +40,47 @@ public class Driver
         
         // checking number rolled
         if (currentRoll == 1) {
-            // no points if 1 rolled
-            System.out.println("You rolled a 1! ");
-            System.out.println("You lose all your points");
-            System.out.println(" "); // spacing beteeen code
+                System.out.println("You rolled a 1! ");
+                System.out.println("You lose all your points");
+                System.out.println(" "); // spacing beteeen code 
+                player1 =0; // reset the score
+                choice = "n"; 
         } else {
-            player1 += currentRoll; // Just add it once!
-            System.out.println(" "); // spacing beteeen code
-            
-            //asks to play again
-            System.out.print("Roll again? (y/n): ");
-            choice = reader.nextLine();
+                player1 += currentRoll;
+                System.out.println("Player 1 rolled: " + currentRoll);
+                System.out.println("Player 1 Total: " + player1);
+                System.out.print("Roll again? (y/n): ");
+                choice = reader.nextLine();
         }
+    }
 
         // player 2s turn
         
         myGame.roll();
 
         player2 = myGame.getRoll();
-        System.out.println("Player 2s total is: " + player2);
+        System.out.println("Player 1s total is: " + player1);
         
 
         System.out.println("Player 2's Turn ");
         choice = "y"; // Reset so Player 2 can start 
         
-        while (choice.equals("y")) {
-            myGame.roll();
-            int currentRoll2 = myGame.getRoll();
-            if (currentRoll2 == 1) {
+    while (choice.equals("y")) {
+        myGame.roll();
+        int currentRoll2 = myGame.getRoll();
+        if (currentRoll2 == 1) {
                 System.out.println("You rolled a 1! ");
                 System.out.println("You lose all your points");
-                System.out.println(" "); // spacing beteeen code                choice = "n"; 
-            } else {
+                System.out.println(" "); // spacing beteeen code
+                player2 = 0; // reset score
+                choice = "n"; 
+        } else {
                 player2 += currentRoll2;
                 System.out.println("Player 2 rolled: " + currentRoll2);
                 System.out.println("Player 2 Total: " + player2);
                 System.out.print("Roll again? (y/n): ");
                 choice = reader.nextLine();
-            }
+        }
         }
         
         System.out.println("Game Over!");
@@ -85,5 +88,4 @@ public class Driver
         System.out.println("  ");
         ///System.out ---- players scores and who wom
     }
-}
 }
